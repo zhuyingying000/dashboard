@@ -10,48 +10,29 @@
           background-color="#545c64"
           text-color="#fff"
           active-text-color="#ffd04b">
-          <el-submenu index="1">
-            <template slot="title">
-              <span>首页</span>
-            </template>
-            <el-submenu index="1-1">
-              <template slot="title">首页</template>
-              <el-menu-item index="1-1-1">列表</el-menu-item>
-            </el-submenu>
-          </el-submenu>
-          <el-submenu index="2">
-            <template slot="title">
-              <span>用户管理</span>
-            </template>
-            <el-submenu index="1-4">
-              <template slot="title">列表</template>
-            </el-submenu>
-          </el-submenu>
-          <el-submenu index="3">
-            <template slot="title">
-              <span>列表管理</span>
-            </template>
-            <el-submenu index="1-4">
-              <template slot="title">选项4</template>
-              <el-menu-item index="1-4-1">选项1</el-menu-item>
-            </el-submenu>
-          </el-submenu>
-          <el-submenu index="4">
-            <template slot="title">
-              <span>房间管理</span>
-            </template>
-            <el-submenu index="1-4">
-              <template slot="title">选项4</template>
-              <el-menu-item index="1-4-1">选项1</el-menu-item>
-            </el-submenu>
-          </el-submenu>
+
+          <router-link to="/" tag="span">
+            <el-menu-item>首页</el-menu-item>
+          </router-link>
+
+          <router-link to="/UserList" tag="span">
+            <el-menu-item>列表</el-menu-item>
+          </router-link>
+
+          <router-link to="/QueueList" tag="span">
+              <el-menu-item >队列管理</el-menu-item>
+          </router-link>
+
+          <router-link to="GameList" tag="span">
+              <el-menu-item >游戏</el-menu-item>
+          </router-link>
         </el-menu>
       </el-col>
     </el-aside>
     <el-container>
       <el-header>Header</el-header>
-      <el-main>Main
-      <router-link to="./user/UserList">列表</router-link>
+      <el-main>
+        <router-view/>
       </el-main>
     </el-container>
   </el-container>
@@ -86,7 +67,7 @@ export default {
   }
 
   .el-main {
-    background: #f00;
+    background: #979797;
 
   }
 
